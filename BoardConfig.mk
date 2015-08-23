@@ -22,6 +22,9 @@
 # ART
 ART_USE_HSPACE_COMPACT := true
 
+# Bionic
+MALLOC_IMPL := dlmalloc
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
