@@ -19,6 +19,9 @@
 
 -include device/samsung/smdk4412-common/BoardCommonConfig.mk
 
+# ART
+ART_USE_HSPACE_COMPACT := true
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
