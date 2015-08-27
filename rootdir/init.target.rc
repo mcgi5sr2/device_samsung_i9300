@@ -24,12 +24,27 @@ service cpboot-daemon /sbin/cbd -d
     group radio cache inet misc audio sdcard_rw log
 
 # GPS
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
-    class main
-    socket gps seqpacket 0660 gps system
-    user gps
-    group system inet sdcard_rw
-    seclabel u:r:gpsd:s0
+#service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+#    class main
+#    socket gps seqpacket 0660 gps system
+#    user gps
+#    group system inet sdcard_rw
+#    seclabel u:r:gpsd:s0
+
+# GPS init
+    write /sys/class/gpio/export 162
+    write /sys/class/gpio/gpio162/value 0
+    write /sys/class/gpio/gpio162/direction out
+    chown gps system /sys/class/gpio/gpio162/value
+    chmod 0664 /sys/class/gpio/gpio162/value
+    chown gps system /dev/ttySAC1
+    chmod 0660 /dev/ttySAC1
+
+# Start GPS daemon
+service gps-daemon /system/bin/glgps -c /system/etc/gps.xml
+  user gps
+  group system
+  class late_start
 
 # LMK
 on property:init.svc.bootanim=stopped
