@@ -1,4 +1,4 @@
-system/bin/gpsd
+system/bin/glgps
 system/lib/hw/gps.exynos4.so
 system/lib/libsec-ril.so
 system/usr/idc/sec_touchscreen.idc
