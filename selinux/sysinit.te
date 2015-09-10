@@ -4,3 +4,4 @@ allow sysinit firmware_exynos:dir { read search open getattr write remove_name a
 allow sysinit firmware_exynos:file { read open write getattr setattr create unlink };
 allow sysinit sysinit:capability { dac_override chown fowner fsetid };
 allow sysinit unlabeled:dir { search };
+allow sysinit surfaceflinger_exec:file { getattr };
