@@ -31,6 +31,8 @@ BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
 BOARD_RIL_CLASS := ../../../hardware/samsung/ril
+COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9300/bluetooth
