@@ -30,7 +30,7 @@ endif
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6262
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
-BOARD_RIL_CLASS := ../../../hardware/samsung/ril
+BOARD_RIL_CLASS := ../../../device/samsung/i9300/ril
 COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 
